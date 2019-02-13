@@ -1,0 +1,110 @@
+body {
+	background-color: #E5E5E5;
+	font-family: 'Signika Negative', sans-serif;
+	font-size: 24px;
+}
+
+input[type=text] {
+	font-family: 'Signika Negative', sans-serif;
+	font-size: 24px;
+	height: 32px;
+	border: none;
+}
+
+input[type=text]::placeholder {
+	font-family: 'Signika Negative', sans-serif;
+	font-size: 24px;
+}
+
+input[type=text]:focus {
+	padding-left: 7px;
+	background-color: #EAFAFF;
+	outline: none;
+	border: none;
+}
+
+.blog-box {
+	padding-left: 7px;
+	padding-right: 7px;
+	background-color: white;
+	margin-right: 10px;
+	height: 34px;
+	overflow-x: auto;
+    white-space: nowrap;
+}
+
+#container {
+	position: absolute;
+	left: 15%;
+	width: 60%;
+	height: 100vh;
+}
+
+#page-title {
+	margin-top: 100px;
+	font-size: 60px;
+}
+
+#add-blog-container {
+	margin-top: 30px;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+}
+
+#add-blog-form {
+	margin-top: 15px;
+
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+}
+
+#new-blog-date, .blog-date {
+	width: 100px;
+}
+
+#new-blog-title, .blog-title {
+	flex-grow: 1;
+}
+
+#new-blog-author, .blog-author {
+	width: 150px;
+}
+
+#add-blog-button, .delete-blog-button {
+	width: 34px;
+	height: 34px;
+	background-color: white;
+}
+
+#queue-container {
+	margin-top: 30px;
+	height: auto;
+}
+
+#queue {
+	margin-top: 15px;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+}
+
+.blog-entry {
+	margin-top: 7px; 
+
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+}
+
+#add-blog-button:hover {
+	background-color: green;
+}
+
+.delete-blog-button:hover {
+	background-color: red;
+}

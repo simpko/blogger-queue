@@ -4,15 +4,27 @@
   "description": "a web app for coordinating blog posts for the MIT Admissions bloggers.",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon app.js"
   },
   "keywords": [
     "queue"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/simpko/blogger-queue.git"
+  },
   "author": "joonho ko",
   "license": "MIT",
   "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "dotenv": "^6.2.0",
     "express": "^4.16.4",
-    "nunjucks": "^3.1.7"
+    "express-session": "^1.15.6",
+    "mongoose": "^5.4.11",
+    "nodemon": "^1.18.10",
+    "nunjucks": "^3.1.7",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0"
   }
 }

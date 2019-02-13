@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>the queue</title>
+    <link href="https://fonts.googleapis.com/css?family=Signika+Negative" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/static/css/queue.css"/>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="text/javascript" src="/static/js/queue.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div id="container">
+        <div id="page-title">blogger queue</div>
+        <div id="add-blog-container">
+            <div class="section-header">add a blog</div>
+            <div id="add-blog-form">
+                <input placeholder="mm/dd" class="blog-box" id="new-blog-date" type="text" maxlength="5">
+                <input placeholder="blog title" class="blog-box" id="new-blog-title" type="text">
+                <input placeholder="name" class="blog-box" id="new-blog-author" type="text">
+                <div id="add-blog-button" onclick='addBlog()'></div>
+            </div>
+        </div>
+        <div id="queue-container">
+            <div class="section-header">from most recent</div>
+            <div id="queue"></div>
+        </div>
+    </div>
+</body>
+</html>
