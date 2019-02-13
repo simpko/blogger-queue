@@ -61,4 +61,4 @@ app.get('/', (req, res) => {
 	res.render('queue.html');
 });
 
-app.listen(3000, () => {console.log('queue live on port 3000')});
+app.listen(process.env.PORT || 8080, () => {console.log('queue live')});
