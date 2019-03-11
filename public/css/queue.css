@@ -27,22 +27,21 @@ input[type=text]:focus {
 	padding-left: 7px;
 	padding-right: 7px;
 	background-color: white;
-	margin-right: 10px;
-	height: 34px;
-	overflow-x: auto;
-    white-space: nowrap;
+	white-space: nowrap;
+	text-overflow: clip;
+	overflow: scroll;
 }
 
 #container {
 	position: absolute;
-	left: 15%;
-	width: 60%;
+	left: 10vw;
+	width: 80vw;
 	height: 100vh;
 }
 
 #page-title {
-	margin-top: 100px;
-	font-size: 60px;
+	margin-top: 25px;
+	font-size: 40px;
 }
 
 #add-blog-container {
@@ -56,28 +55,10 @@ input[type=text]:focus {
 #add-blog-form {
 	margin-top: 15px;
 
-	display: flex;
-	flex-direction: row;
-	justify-content: flex-start;
-	flex-wrap: wrap;
-}
-
-#new-blog-date, .blog-date {
-	width: 100px;
-}
-
-#new-blog-title, .blog-title {
-	flex-grow: 1;
-}
-
-#new-blog-author, .blog-author {
-	width: 150px;
-}
-
-#add-blog-button, .delete-blog-button {
-	width: 34px;
-	height: 34px;
-	background-color: white;
+	display: grid;
+	grid-template-columns: 90px auto 100px 35px;
+	grid-template-rows: 35px;
+	grid-column-gap: 10px;
 }
 
 #queue-container {
@@ -94,11 +75,16 @@ input[type=text]:focus {
 }
 
 .blog-entry {
-	margin-top: 7px; 
+	margin-top: 7px;
 
-	display: flex;
-	flex-direction: row;
-	justify-content: flex-start;
+	display: grid;
+	grid-template-columns: 90px auto 100px 35px;
+	grid-template-rows: 35px;
+	grid-column-gap: 10px;
+}
+
+#add-blog-button {
+	background-color: white;
 }
 
 #add-blog-button:hover {

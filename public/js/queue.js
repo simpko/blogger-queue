@@ -10,6 +10,9 @@ function getQueue() {
 		for (let i=1; i <= blogs.length; i++) {
 			const blog = blogs[i-1];
 
+			const container = document.createElement('div');
+			container.className = 'blog-entry-container';
+			
 			const entry = document.createElement('div');
 			entry.className = 'blog-entry';
 			entry.id = 'blog-entry-' + i;
@@ -30,7 +33,7 @@ function getQueue() {
 			entry.appendChild(blogAuthor);
 
 			const deleteBlog = document.createElement('div');
-			deleteBlog.className = 'delete-blog-button';
+			deleteBlog.className = 'delete-blog-button blog-box';
 			deleteBlog.addEventListener('click', () => {
 				const entry = document.getElementById('blog-entry-' + i);
 				const [date, title, author, button] = Array.from(entry.children).map((node) => node.innerHTML);
@@ -40,8 +43,9 @@ function getQueue() {
 				.then((res) => getQueue());
 			});
 			entry.appendChild(deleteBlog);
+			container.appendChild(entry);
+			queue.appendChild(container);
 
-			queue.appendChild(entry);
 		}
 	})
 	.catch((err) => {
