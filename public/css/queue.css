@@ -4,6 +4,10 @@ body {
 	font-size: 24px;
 }
 
+::-webkit-scrollbar {
+	display: none;
+}
+
 input[type=text] {
 	font-family: 'Signika Negative', sans-serif;
 	font-size: 24px;
