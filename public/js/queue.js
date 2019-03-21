@@ -34,6 +34,7 @@ function getQueue() {
 
 			const deleteBlog = document.createElement('div');
 			deleteBlog.className = 'delete-blog-button blog-box';
+			deleteBlog.innerHTML = 'delete';
 			deleteBlog.addEventListener('click', () => {
 				const entry = document.getElementById('blog-entry-' + i);
 				const [date, title, author, button] = Array.from(entry.children).map((node) => node.innerHTML);

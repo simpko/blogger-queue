@@ -60,7 +60,7 @@ input[type=text]:focus {
 	margin-top: 15px;
 
 	display: grid;
-	grid-template-columns: 90px auto 100px 35px;
+	grid-template-columns: 90px auto 100px 50px;
 	grid-template-rows: 35px;
 	grid-column-gap: 10px;
 }
@@ -82,19 +82,27 @@ input[type=text]:focus {
 	margin-top: 7px;
 
 	display: grid;
-	grid-template-columns: 90px auto 100px 35px;
+	grid-template-columns: 90px auto 100px 80px;
 	grid-template-rows: 35px;
 	grid-column-gap: 10px;
 }
 
 #add-blog-button {
 	background-color: white;
+	text-align: center;
 }
 
 #add-blog-button:hover {
 	background-color: green;
+	color: white;
+}
+
+.delete-blog-button {
+	background-color: white;
+	text-align: center;
 }
 
 .delete-blog-button:hover {
 	background-color: red;
+	color: white;
 }
