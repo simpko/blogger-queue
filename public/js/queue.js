@@ -7,46 +7,53 @@ function getQueue() {
 		while (queue.firstChild) queue.removeChild(queue.firstChild);
 
 		const blogs = res.data;
-		for (let i=1; i <= blogs.length; i++) {
-			const blog = blogs[i-1];
 
-			const container = document.createElement('div');
-			container.className = 'blog-entry-container';
-			
-			const entry = document.createElement('div');
-			entry.className = 'blog-entry';
-			entry.id = 'blog-entry-' + i;
+		if (blogs.length === 0) {
+			const emptyReponse = document.createElement('div');
+			emptyResponse.className = 'empty-response';
+			emptyResponse.innerHTML = "there doesn't seem to be anything here."
+			queue.appendChild(emptyResponse);
+		} else {
+			for (let i=1; i <= blogs.length; i++) {
+				const blog = blogs[i-1];
 
-			const blogDate = document.createElement('div');
-			blogDate.className = 'blog-date blog-box';
-			blogDate.innerHTML = blog.month + '/' + blog.day;
-			entry.appendChild(blogDate);
+				const container = document.createElement('div');
+				container.className = 'blog-entry-container';
+				
+				const entry = document.createElement('div');
+				entry.className = 'blog-entry';
+				entry.id = 'blog-entry-' + i;
 
-			const blogTitle = document.createElement('div');
-			blogTitle.className = 'blog-title blog-box';
-			blogTitle.innerHTML = blog.title;
-			entry.appendChild(blogTitle);
+				const blogDate = document.createElement('div');
+				blogDate.className = 'blog-date blog-box';
+				blogDate.innerHTML = blog.month + '/' + blog.day;
+				entry.appendChild(blogDate);
 
-			const blogAuthor = document.createElement('div');
-			blogAuthor.className = 'blog-author blog-box';
-			blogAuthor.innerHTML = blog.author;
-			entry.appendChild(blogAuthor);
+				const blogTitle = document.createElement('div');
+				blogTitle.className = 'blog-title blog-box';
+				blogTitle.innerHTML = blog.title;
+				entry.appendChild(blogTitle);
 
-			const deleteBlog = document.createElement('div');
-			deleteBlog.className = 'delete-blog-button blog-box';
-			deleteBlog.innerHTML = 'delete';
-			deleteBlog.addEventListener('click', () => {
-				const entry = document.getElementById('blog-entry-' + i);
-				const [date, title, author, button] = Array.from(entry.children).map((node) => node.innerHTML);
-				const [month, day] = date.split('/');
+				const blogAuthor = document.createElement('div');
+				blogAuthor.className = 'blog-author blog-box';
+				blogAuthor.innerHTML = blog.author;
+				entry.appendChild(blogAuthor);
 
-				axios.post('/api/delete', {title: title, author: author, day: day, month: month})
-				.then((res) => getQueue());
-			});
-			entry.appendChild(deleteBlog);
-			container.appendChild(entry);
-			queue.appendChild(container);
+				const deleteBlog = document.createElement('div');
+				deleteBlog.className = 'delete-blog-button blog-box';
+				deleteBlog.innerHTML = 'delete';
+				deleteBlog.addEventListener('click', () => {
+					const entry = document.getElementById('blog-entry-' + i);
+					const [date, title, author, button] = Array.from(entry.children).map((node) => node.innerHTML);
+					const [month, day] = date.split('/');
 
+					axios.post('/api/delete', {title: title, author: author, day: day, month: month})
+					.then((res) => getQueue());
+				});
+				entry.appendChild(deleteBlog);
+				container.appendChild(entry);
+				queue.appendChild(container);
+			}
 		}
 	})
 	.catch((err) => {

@@ -1,6 +1,6 @@
 body {
 	background-color: #E5E5E5;
-	font-family: 'Signika Negative', sans-serif;
+	font-family: 'Rubik', sans-serif;
 	font-size: 24px;
 }
 
@@ -9,15 +9,17 @@ body {
 }
 
 input[type=text] {
-	font-family: 'Signika Negative', sans-serif;
+	font-family: 'Rubik', sans-serif;
 	font-size: 24px;
 	height: 32px;
 	border: none;
+	border-radius: 5px;
 }
 
 input[type=text]::placeholder {
-	font-family: 'Signika Negative', sans-serif;
+	font-family: 'Rubik', sans-serif;
 	font-size: 24px;
+	border-radius: 5px;
 }
 
 input[type=text]:focus {
@@ -34,6 +36,7 @@ input[type=text]:focus {
 	white-space: nowrap;
 	text-overflow: clip;
 	overflow: scroll;
+	border-radius: 5px;
 }
 
 #container {
@@ -50,7 +53,6 @@ input[type=text]:focus {
 
 #add-blog-container {
 	margin-top: 30px;
-
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
@@ -58,9 +60,8 @@ input[type=text]:focus {
 
 #add-blog-form {
 	margin-top: 15px;
-
 	display: grid;
-	grid-template-columns: 90px auto 100px 50px;
+	grid-template-columns: 100px auto 100px 50px;
 	grid-template-rows: 35px;
 	grid-column-gap: 10px;
 }
@@ -72,7 +73,6 @@ input[type=text]:focus {
 
 #queue {
 	margin-top: 15px;
-
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
@@ -80,16 +80,17 @@ input[type=text]:focus {
 
 .blog-entry {
 	margin-top: 7px;
-
 	display: grid;
-	grid-template-columns: 90px auto 100px 80px;
+	grid-template-columns: 100px auto 100px 80px;
 	grid-template-rows: 35px;
 	grid-column-gap: 10px;
+	border-radius: 5px;
 }
 
 #add-blog-button {
 	background-color: white;
 	text-align: center;
+	border-radius: 5px;
 }
 
 #add-blog-button:hover {
@@ -100,9 +101,14 @@ input[type=text]:focus {
 .delete-blog-button {
 	background-color: white;
 	text-align: center;
+	border-radius: 5px;
 }
 
 .delete-blog-button:hover {
 	background-color: red;
 	color: white;
+}
+
+.empty-response {
+	background-color: red;
 }
